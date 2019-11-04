@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  TextInput,
+  Alert,
   View,
   Text,
   Image,

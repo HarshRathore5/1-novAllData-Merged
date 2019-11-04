@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, SafeAreaView , ScrollView} from 'react-native'
+import {StyleSheet, SafeAreaView , ScrollView,Alert} from 'react-native'
 import {Header} from '../../src/PhotoLootChallenges/header'
 import { Label } from '../../src/PhotoLootChallenges/label'
 import { MainView } from '../../src/PhotoLootChallenges/mainView'
@@ -12,7 +12,7 @@ export default class App extends React.Component{
     return(  
     
       <SafeAreaView style={{flex:1}}>
-      <Header/>
+      
       <ScrollView>
       <Label/>
       <MainView/>

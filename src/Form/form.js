@@ -8,11 +8,21 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  Alert,
+  Alert
 } from 'react-native';
 import Table from './table';
 
 export default class Form extends React.Component {
+  // static navigationOptions = {
+    
+  //   headerRight:(
+  //     <Button
+  //     title="Info"
+  //     onPress={()=>Alert.alert("This is an info Button")}/>
+  //   ),
+  //   title:"Form",
+
+  // }
   constructor(props) {
     super(props);
     this.state = {
