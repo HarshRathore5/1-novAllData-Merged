@@ -1,12 +1,8 @@
-// // CommonJS syntax
-// // let LocalizedStrings  = require ('react-native-localization');
-
-const strings = {
-  en: {
-    HomeScreen: 'Home Screen',
+export default{
+    HomeScreen:'Home Screen',
     GoToForm: 'Go to Form',
     GoToCell: 'Go To Cell',
-    GoToPhotoLoot: 'Go To PhotoLoot',
+    GoToPhotoLoot: 'Go To Photo Loot',
     GoToRoads: 'Go To Roads',
     GoToCollection: 'Go To Collection',
     GoToNetworking: 'Go To Networking',
@@ -14,9 +10,4 @@ const strings = {
     GoToImageCrop: 'Go To Image Crop',
     GoToFlag: 'Go To Flag',
     GoToTempHome: 'Go To TempHome',
-  },
-  ar:{
-    "HomeScreen": "أهلاً بالعالم"
-  }
-};
-export default strings;
+}
