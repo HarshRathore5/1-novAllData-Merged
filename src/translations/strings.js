@@ -1,16 +1,19 @@
- 
 // // CommonJS syntax
 // // let LocalizedStrings  = require ('react-native-localization');
- 
-// const strings = new LocalizedStrings({
- 
-//  en:{
-//    how:"How do you want your egg today?",
-//    boiledEgg:"Boiled egg",
-//    softBoiledEgg:"Soft-boiled egg",
-//    choice:"How to choose the egg",
-//    GoToCell:"Go To Cell"
-//  },
- 
-// });
-// export default strings;
+
+const strings = {
+  en: {
+    HomeScreen: 'Home Screen',
+    GoToForm: 'Go to Form',
+    GoToCell: 'Go To Cell',
+    GoToPhotoLoot: 'Go To PhotoLoot',
+    GoToRoads: 'Go To Roads',
+    GoToCollection: 'Go To Collection',
+    GoToNetworking: 'Go To Networking',
+    GoToCards: 'Go To Cards',
+    GoToImageCrop: 'Go To Image Crop',
+    GoToFlag: 'Go To Flag',
+    GoToTempHome: 'Go To TempHome',
+  },
+};
+export default strings;

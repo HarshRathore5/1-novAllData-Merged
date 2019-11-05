@@ -20,8 +20,9 @@ import UIField from './src/Networking/uiField';
 import Card from './src/FlatListCard/card';
 import CropImage from './src/ImageCrop/cropImage';
 import Flag from './src/Flag/flag';
-import TempHome from './src/editScreen/tempHome'
-import Edit from './src/editScreen/edit'
+import TempHome from './src/editScreen/tempHome';
+import Edit from './src/editScreen/edit';
+import strings from './src/translations/strings';
 
 class App extends React.Component {
   static navigationOptions = {
@@ -30,61 +31,64 @@ class App extends React.Component {
 
   render() {
     return (
-      <View style={Styles.viewStyle}>
-        <ScrollView>
-          <Text style={Styles.txtStyle}>Home Screen</Text>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('Form')}>
-            <Text style={Styles.buttontxtStyle}>Go to Form</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('Cell')}>
-            <Text style={Styles.buttontxtStyle}>Go to Cell</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('PhotoLoot')}>
-            <Text style={Styles.buttontxtStyle}>Go to PhotoLoot</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('Roads')}>
-            <Text style={Styles.buttontxtStyle}>Go to Roads</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('Collection')}>
-            <Text style={Styles.buttontxtStyle}>Go to Collection</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('Networking')}>
-            <Text style={Styles.buttontxtStyle}>Go to NetworkingTask</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('Card')}>
-            <Text style={Styles.buttontxtStyle}>Go to Cards</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('ImageCrop')}>
-            <Text style={Styles.buttontxtStyle}>Go to Image Crop</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('Flag')}>
-            <Text style={Styles.buttontxtStyle}>Go to Flag</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Styles.buttonViewStyle}
-            onPress={() => this.props.navigation.navigate('TempHome')}>
-            <Text style={Styles.buttontxtStyle}>Go to TempHome</Text>
-          </TouchableOpacity>
-        </ScrollView>
-      </View>
+      <ScrollView
+        style={Styles.viewStyle}
+        contentContainerStyle={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text style={Styles.txtStyle}>{strings.en.HomeScreen}</Text>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('Form')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToForm}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('Cell')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToCell}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('PhotoLoot')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToPhotoLoot}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('Roads')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToRoads}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('Collection')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToCollection}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('Networking')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToNetworking}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('Card')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToCards}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('ImageCrop')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToImageCrop}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('Flag')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToFlag}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.props.navigation.navigate('TempHome')}>
+          <Text style={Styles.buttontxtStyle}>{strings.en.GoToTempHome}</Text>
+        </TouchableOpacity>
+      </ScrollView>
     );
   }
 }
@@ -120,10 +124,7 @@ const AppNavigator = createStackNavigator(
         title: 'PhotoLoot',
         headerBackTitle: null,
         headerRight: (
-          <Button
-            title="Info"
-            onPress={() => navigation.navigate('Roads')}
-          />
+          <Button title="Info" onPress={() => navigation.navigate('Roads')} />
         ),
       }),
     },
@@ -144,7 +145,7 @@ const AppNavigator = createStackNavigator(
       screen: CollectionView,
       navigationOptions: ({navigation}) => ({
         title: 'Collection View',
-        headerBackTitle:  null,
+        headerBackTitle: null,
         headerRight: (
           <Button
             title="Info"
@@ -159,10 +160,7 @@ const AppNavigator = createStackNavigator(
         title: 'Networking',
         headerBackTitle: null,
         headerRight: (
-          <Button
-            title="Info"
-            onPress={() => navigation.navigate('Card')}
-          />
+          <Button title="Info" onPress={() => navigation.navigate('Card')} />
         ),
       }),
     },
@@ -172,22 +170,19 @@ const AppNavigator = createStackNavigator(
         title: 'Card',
         headerBackTitle: null,
         headerRight: (
-          <Button
-            title="Info"
-            onPress={() => navigation.navigate('Flag')}
-          />
+          <Button title="Info" onPress={() => navigation.navigate('Flag')} />
         ),
       }),
     },
-    
+
     ImageCrop: {screen: CropImage},
     Flag: {screen: Flag},
     TempHome: {
-      screen:TempHome
+      screen: TempHome,
     },
-    EditScreen:{screen:Edit}
+    EditScreen: {screen: Edit},
   },
- 
+
   {
     initialRouteName: 'Home',
     headerMode: 'screen',
@@ -195,8 +190,6 @@ const AppNavigator = createStackNavigator(
 );
 const Styles = StyleSheet.create({
   viewStyle: {
-    flex: 1,
-    alignItems: 'center',
     backgroundColor: '#172735',
   },
   txtStyle: {

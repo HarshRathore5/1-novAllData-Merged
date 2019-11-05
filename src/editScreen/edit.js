@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View,
+  ImageBackground,
   Text,
   Image,
   TextInput,
@@ -9,13 +9,14 @@ import {
   Alert,
   Linking
 } from 'react-native';
-import ImagePicker from 'react-native-image-crop-picker';
+// import ImagePicker from 'react-native-image-crop-picker';
 import permission, {
   check,
   PERMISSIONS,
   RESULTS,
 } from 'react-native-permissions';
 import {RNS3} from 'react-native-aws3'
+import {CommonMethods} from './commonMethods'
 
 
 
@@ -83,17 +84,24 @@ export default class Edit extends React.Component {
             );
             break;
           case RESULTS.GRANTED:
-            ImagePicker.openPicker({
-              width: 300,
-              height: 400,
-              cropping: true,
-            }).then(image => {
+            // ImagePicker.openPicker({
+            //   width: 300,
+            //   height: 400,
+            //   cropping: true,
+            // }).then(image => {
+            //   this.setState({
+            //     imagePath: image.path,
+            //   });
+            //   this.update()
+            //   console.log(image);
+            // });
+           
+             CommonMethods.imagePicker((pathImage)=>{
               this.setState({
-                imagePath: image.path,
+                imagePath: pathImage
               });
               this.update()
-              console.log(image);
-            });
+            })
             
             break;
           case RESULTS.BLOCKED:
@@ -126,7 +134,9 @@ export default class Edit extends React.Component {
   };
   render() {
     return (
-      <View style={Styles.viewStyle}>
+      <ImageBackground 
+      source={require('../assets/footerImages/backgroundImage.jpg')}
+      style={Styles.viewStyle}>
         <TextInput
           placeholder={this.state.first}
           onSubmitEditing={() => {
@@ -158,14 +168,14 @@ export default class Edit extends React.Component {
           style={Styles.buttonStyle}>
           <Text style={Styles.txtStyle}>Submit</Text>
         </TouchableOpacity>
-      </View>
+      </ImageBackground>
     );
   }
 }
 
 const Styles = StyleSheet.create({
   viewStyle: {
-    justifyContent: 'center',
+    flex:1,
     alignItems: 'center',
   },
   txtInputStyle: {
@@ -182,6 +192,7 @@ const Styles = StyleSheet.create({
     backgroundColor: 'powderblue',
     borderRadius: 5,
     marginTop: 20,
+    padding:10
   },
   imgViewStyle: {
     margin: 20,
