@@ -10,4 +10,14 @@ export default{
     GoToImageCrop: 'Go To Image Crop',
     GoToFlag: 'Go To Flag',
     GoToTempHome: 'Go To TempHome',
+    FirstName:'First Name',
+    LastName:'Last Name',
+    Email:'Email',
+    Number:'Mobile Number',
+    City:'City',
+    State:'State',
+    emailAddress:'Email Address',
+    goToLogIn:"Go To LogIn",
+    clearData:"Clear Data"
+
 }

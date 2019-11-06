@@ -6,11 +6,14 @@ import {
   Button,
   TouchableOpacity,
   ScrollView,
-  Alert,
+  
 } from 'react-native';
-import {createStackNavigator} from 'react-navigation-stack';
+import {
+  createStackNavigator,
+  
+} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
-import I18n from './src/translations/I18n'
+import I18n from './src/translations/I18n';
 
 import Form from './src/Form/form';
 import Cell from './src/CellofTable/cell';
@@ -23,13 +26,16 @@ import CropImage from './src/ImageCrop/cropImage';
 import Flag from './src/Flag/flag';
 import TempHome from './src/editScreen/tempHome';
 import Edit from './src/editScreen/edit';
-import strings from './src/translations/strings';
+import SplashScreen from './src/storageTask/splashScreen';
+import Login from './src/storageTask/login';
+import SignUp from './src/storageTask/signUp';
+import DashBoard from './src/storageTask/dashboard';
 
 class App extends React.Component {
-  static navigationOptions = {
-    title: 'Home',
-  };
-
+  
+  navigate=(page)=>{
+    this.props.navigation.navigate(page)
+  }
   render() {
     return (
       <ScrollView
@@ -38,63 +44,68 @@ class App extends React.Component {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Text style={Styles.txtStyle}>{I18n.t("HomeScreen")}</Text>
+        <Text style={Styles.txtStyle}>{I18n.t('HomeScreen')}</Text>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('Form')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToForm")}</Text>
+          onPress={() => this.navigate('Form')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToForm')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('Cell')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToCell")}</Text>
+          onPress={() => this.navigate('Cell')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToCell')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('PhotoLoot')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToPhotoLoot")}</Text>
+          onPress={() => this.navigate('PhotoLoot')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToPhotoLoot')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('Roads')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToRoads")}</Text>
+          onPress={() => this.navigate('Roads')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToRoads')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('Collection')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToCollection")}</Text>
+          onPress={() => this.navigate('Collection')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToCollection')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('Networking')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToNetworking")}</Text>
+          onPress={() => this.navigate('Networking')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToNetworking')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
           onPress={() => this.props.navigation.navigate('Card')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToCards")}</Text>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToCards')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('ImageCrop')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToImageCrop")}</Text>
+          onPress={() => this.navigate('ImageCrop')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToImageCrop')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('Flag')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToFlag")}</Text>
+          onPress={() => this.navigate('Flag')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToFlag')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Styles.buttonViewStyle}
-          onPress={() => this.props.navigation.navigate('TempHome')}>
-          <Text style={Styles.buttontxtStyle}>{I18n.t("GoToTempHome")}</Text>
+          onPress={() => this.navigate('TempHome')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToTempHome')}</Text>
         </TouchableOpacity>
       </ScrollView>
     );
   }
 }
+
 const AppNavigator = createStackNavigator(
   {
+    Splash: {screen: SplashScreen},
+    Login: {screen: Login},
+    SignUp: {screen: SignUp},
+    DashBoard: {screen: DashBoard},
     Home: {screen: App},
     Form: {
       screen: Form,
@@ -183,12 +194,14 @@ const AppNavigator = createStackNavigator(
     },
     EditScreen: {screen: Edit},
   },
+  
 
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Splash',
     headerMode: 'screen',
   },
 );
+
 const Styles = StyleSheet.create({
   viewStyle: {
     backgroundColor: '#172735',
