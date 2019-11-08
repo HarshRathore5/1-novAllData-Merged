@@ -1,3 +1,5 @@
+import SignUp from "../storageTask/signUp";
+
 export default{
     HomeScreen:'Home Screen',
     GoToForm: 'Go to Form',
@@ -10,6 +12,7 @@ export default{
     GoToImageCrop: 'Go To Image Crop',
     GoToFlag: 'Go To Flag',
     GoToTempHome: 'Go To TempHome',
+    GoToSplash:'Go To Splash Screen',
     FirstName:'First Name',
     LastName:'Last Name',
     Email:'Email',
@@ -18,6 +21,8 @@ export default{
     State:'State',
     emailAddress:'Email Address',
     goToLogIn:"Go To LogIn",
-    clearData:"Clear Data"
-
+    clearData:"Clear Data",
+    SignIn:'Sign In',
+    getInfo:'Get Info',
+    SignOut:'Sign Out'
 }

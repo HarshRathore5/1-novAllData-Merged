@@ -6,12 +6,8 @@ import {
   Button,
   TouchableOpacity,
   ScrollView,
-  
 } from 'react-native';
-import {
-  createStackNavigator,
-  
-} from 'react-navigation-stack';
+import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 import I18n from './src/translations/I18n';
 
@@ -30,16 +26,18 @@ import SplashScreen from './src/storageTask/splashScreen';
 import Login from './src/storageTask/login';
 import SignUp from './src/storageTask/signUp';
 import DashBoard from './src/storageTask/dashboard';
+import GoogleSigning from './src/SignIn/googleSigning';
+import Details from './src/SignIn/details';
 
 class App extends React.Component {
-  
-  navigate=(page)=>{
-    this.props.navigation.navigate(page)
-  }
+  navigate = page => {
+    this.props.navigation.navigate(page);
+  };
   render() {
     return (
       <ScrollView
         style={Styles.viewStyle}
+        contentInset={{top: 5, bottom: 20}}
         contentContainerStyle={{
           justifyContent: 'center',
           alignItems: 'center',
@@ -50,6 +48,7 @@ class App extends React.Component {
           onPress={() => this.navigate('Form')}>
           <Text style={Styles.buttontxtStyle}>{I18n.t('GoToForm')}</Text>
         </TouchableOpacity>
+        
         <TouchableOpacity
           style={Styles.buttonViewStyle}
           onPress={() => this.navigate('Cell')}>
@@ -95,6 +94,16 @@ class App extends React.Component {
           onPress={() => this.navigate('TempHome')}>
           <Text style={Styles.buttontxtStyle}>{I18n.t('GoToTempHome')}</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.navigate('Splash')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('GoToSplash')}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Styles.buttonViewStyle}
+          onPress={() => this.navigate('SignIn')}>
+          <Text style={Styles.buttontxtStyle}>{I18n.t('SignIn')}</Text>
+        </TouchableOpacity>
       </ScrollView>
     );
   }
@@ -102,10 +111,6 @@ class App extends React.Component {
 
 const AppNavigator = createStackNavigator(
   {
-    Splash: {screen: SplashScreen},
-    Login: {screen: Login},
-    SignUp: {screen: SignUp},
-    DashBoard: {screen: DashBoard},
     Home: {screen: App},
     Form: {
       screen: Form,
@@ -193,11 +198,17 @@ const AppNavigator = createStackNavigator(
       screen: TempHome,
     },
     EditScreen: {screen: Edit},
+
+    Splash: {screen: SplashScreen},
+    Login: {screen: Login},
+    SignUp: {screen: SignUp},
+    DashBoard: {screen: DashBoard},
+    SignIn: {screen: GoogleSigning},
+    details: {screen: Details},
   },
-  
 
   {
-    initialRouteName: 'Splash',
+    initialRouteName: 'Home',
     headerMode: 'screen',
   },
 );

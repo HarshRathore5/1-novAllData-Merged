@@ -51,5 +51,10 @@ const Styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
   },
+  mainViewStyle:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center'
+  }
 });
 export default Styles;
