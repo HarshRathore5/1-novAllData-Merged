@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>508336628746-47gik2d8si7r8ohmb10c3u2s2fddovba.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.508336628746-47gik2d8si7r8ohmb10c3u2s2fddovba</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAoh_F272oe5-9jwqBWJXERlGZ6en_I0Yw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>508336628746</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.trainingallTask</string>
+	<key>PROJECT_ID</key>
+	<string>reactdemo-d444a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>reactdemo-d444a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:508336628746:ios:67e391d0383141918b6bf3</string>
+	<key>DATABASE_URL</key>
+	<string>https://reactdemo-d444a.firebaseio.com</string>
+</dict>
+</plist>
