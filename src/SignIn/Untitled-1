@@ -1,0 +1,19 @@
+1. String File missing
+2. Arrangement for functions
+3. Common Textfield Component
+4. Navigation Header on Splash and Signup
+KeyBoard Aware
+common file for path of images
+
+
+
+vijay
+
+1. common function for Navigation.
+2. create navigator in separate file.
+3. create a file constants.js and use strings as constants not as direct strings.
+4. remove unused imports and variables.
+5. animation end function must be used instead of timeout.
+6. trailing comma.
+7. use object destructor.   const {firstName, lastName} = this.state;
+
